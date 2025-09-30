@@ -1,0 +1,53 @@
+<div class="services-wrapper">
+    <h2 class="section-title">Services</h2>
+  
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let s of servicesList;">
+        <div class="card-media">
+          <img [src]="'http://localhost:3000/uploads/' + s.imgURL" alt="{{ s.title }}" />
+        </div>
+  
+        <div class="card-body">
+          <h3 class="card-title">{{ s.title }}</h3>
+          <p class="card-desc">{{ s.description }}</p>
+  
+          <div class="card-actions">
+            <button class="btn btn-edit" (click)="editService(s)">
+              Edit
+            </button>
+            <button class="btn btn-delete" (click)="deleteService(s._id)">
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="empty-state" *ngIf="servicesList.length === 0">
+      <p>No services added yet.</p>
+    </div>
+  </div>
+  
+
+<div class="service-form">
+    <h2>Add New Service</h2>
+    <form [formGroup]="formGroup" (ngSubmit)="isEdit ? updateService() : newService() ">
+      <div class="form-group">
+        <label for="title">Service Title</label>
+        <input type="text" id="title"  placeholder="Enter service title"  required formControlName="title">
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Service Description</label>
+        <textarea id="description" placeholder="Enter service description" required formControlName="description"></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="image">Service Image</label>
+        <input type="file" id="image"  (change)="onChangeImage($event)" required>
+      </div>
+  
+      <button type="submit">{{isEdit ? "Update Service" :" Add Service"}}</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+  
+      @for (s of services; track $index) {
+        <div class="col-12 col-lg-6 d-flex justify-content-center">
+          <div class="service-card">
+            <div class="service-header">
+              <img [src]="'http://localhost:3000/uploads/' + s.imgURL" alt="{{s.title}}">
+              <h3>{{s.title}}</h3>
+            </div>
+            <p>
+              {{s.description}}
+            </p>
+          </div>
+        </div>
+      }
+  
+    </div>
+  </div>
+  

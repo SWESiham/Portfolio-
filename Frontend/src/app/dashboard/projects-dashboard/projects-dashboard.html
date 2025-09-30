@@ -1,0 +1,61 @@
+<section class="projects-wrapper">
+    <h2 class="projects-header">My Projects</h2>
+  
+    <!-- Add Project Form -->
+    <form class="project-form" [formGroup]="formGroup" (ngSubmit)="isEdit? updateProject(): addProject()">
+      <h3>Add New Project</h3>
+  
+      <input type="text" formControlName="title" placeholder="Title" required  />
+      <textarea formControlName="description" placeholder="Description"></textarea>
+  
+      <!-- Dynamic Languages -->
+      <div formArrayName="language">
+        <label>Languages</label>
+        <div *ngFor="let lang of languageArray.controls; let i = index">
+          <input [formControlName]="i" placeholder="Enter language" />
+          <button type="button" (click)="removeLanguage(i)">Remove</button>
+        </div>
+        <button type="button" (click)="addLanguage()">+ Add Language</button>
+      </div>
+  
+      <!-- Status -->
+      <select formControlName="status" value="Status">
+        <option disabled>Select the status of the Project</option>
+        <option value="completed">completed</option>
+        <option value="in_progress">in progress</option>
+        <option value="soon">soon</option>
+        <option value="private">private</option>
+      </select>
+  
+      <input type="text" formControlName="category" placeholder="Category" />
+      <input type="text" formControlName="githubUrl" placeholder="Github URL" />
+      <input type="text" formControlName="demo" placeholder="Demo URL" />
+      <input type="file" (change)="onChangeImage($event)" />
+      <button type="submit" class="btn-add">{{isEdit ? "update Project":"Add Project"}}</button>
+    </form>
+  
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      <div class="project-card" *ngFor="let proj of projectsList">
+        <img [src]="'http://localhost:3000/uploads/' + proj.imgURL" alt="Project Image" class="card-img-top" />
+        <div class="card-body">
+          <h3>{{ proj.title }}</h3>
+          <p class="description">{{ proj.description }}</p>
+  
+          <!-- Show Languages -->
+          <div *ngFor="let lang of proj.language" class="languages">{{ lang }}</div>
+  
+          <div class="card-lowersec">
+            <a [href]="proj.githubUrl" class="github" target="_blank">Github</a>
+            <a [href]="proj.demo" class="demo" target="_blank">Live Demo</a>
+          </div>
+  
+          <div class="card-actions">
+            <button class="btn-edit"  (click)="editProject(proj)">Edit</button>
+            <button class="btn-delete" (click)="deleteProject(proj._id)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

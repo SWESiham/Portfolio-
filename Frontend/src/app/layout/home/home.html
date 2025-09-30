@@ -1,0 +1,86 @@
+<!-- <body class="dark-mode" id="app"> -->
+    <section class="home-section" id="home">
+        <div class="container">
+            <div class="home-content">
+                <div class="text-content">
+                    <p class="greeting">{{info.title}} <span class="name-highlight">{{info.name}}</span></p>
+                    <h1 class="main-title">
+                        <span class="typed-text" id="typed"></span>
+                    </h1>
+                    <p class="description">{{info.description}}</p>
+
+                    <div class="cta-buttons">
+                        <button class="hire-btn" (click)="hireMeClick()">
+                            <span>Hire Me</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="cv-btn" (click)="downloadCV()">
+                            <i class="fas fa-download"></i>
+                            <span>Download CV</span>
+                        </button>
+                    </div>
+
+                    <div class="social-links">
+                        <p class="social-text">Find me on</p>
+                        <div class="social-icons">
+                            <a [href]="info.linkedin" class="social-icon" aria-label="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a [href]="info.githubURL" class="social-icon" aria-label="GitHub" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a class="social-icon" aria-label="Email" (click)="sendEmail()">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Character Section -->
+                <div class="character-section">
+                    <div class="character-container">
+                        <!-- 3D Character Placeholder -->
+                        <div class="character-image">
+                            <!-- Character will be rendered here -->
+                            <div style="
+                                    width: 100%;
+                                    height: 100%;
+                                    position: relative;
+                                    display: flex;
+                                    align-items: center;
+                                    margin: 10px;
+                                    justify-content: center;
+                ">
+                                <!-- Character Elements -->
+                                <img src="imgg1.png" alt="">
+                            </div>
+                        </div>
+                        <!-- Floating Tech Icons -->
+                        <div class="floating-icons">
+                            <div class="floating-icon">
+                                <i class="fab fa-node"></i>
+                            </div>
+                            <div class="floating-icon">
+                                <i class="fab fa-js-square"></i>
+                            </div>
+                            <div class="floating-icon">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <div class="floating-icon">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <div class="floating-icon">
+                                <i class="fab fa-angular"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+
+   
+<!-- </body> -->

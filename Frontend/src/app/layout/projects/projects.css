@@ -1,0 +1,49 @@
+.project-card {
+    width: 100%;
+    max-width: 35rem;
+    
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #fff;
+    margin-top: 80px;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.02);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 8px 20px;
+  }
+  
+  .card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  
+  .languages,.github,.demo {
+    display: inline-block;
+    padding: 4px 10px;
+    margin: 4px 6px 0 0;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    white-space: nowrap;
+    transition: transform 0.2s ease;
+  }
+  
+  .languages:hover,.github:hover ,.demo:hover{
+    transform: scale(1.01);
+  }
+  
+  .card-lowersec{
+    display:flex;
+    justify-content: space-between;
+  }
+  

@@ -1,0 +1,55 @@
+/* remove huge margin */
+.container {
+  height: 100vh !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: auto !important;
+  }
+
+  .service-card {
+    padding: 20px;
+    border-radius: 12px;
+    width: 100%;   
+    max-width: 90%; 
+    min-height: 250px;   
+    max-height: max-content; 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 10px;
+    transition: transform 0.3s ease; 
+
+  }
+  
+  .service-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+
+  }
+  
+  .service-header h3 {
+    /* color: #fff; */
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .service-card p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  
+  .service-card img {
+   width: 40px;
+   height: 40px;
+   margin-right: 5px;
+  }
+
+ 
+  
+  .service-card:hover {
+    transform: scale(1.02); 
+  }
+  
+  
+

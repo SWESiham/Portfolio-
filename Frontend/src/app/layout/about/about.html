@@ -1,0 +1,40 @@
+<section class="about-section" *ngIf="About">
+    <div class="about-container" *ngFor="let ab of About.about">
+      
+      <!-- Left Column -->
+      <div class="about-left">
+        <div class="exp-card big">
+          <h2>{{ab.yearsOfExperience}}</h2>
+          <p>Years Of<br>Experience</p>
+        </div>
+        <div class="exp-card small">
+          <div class="icon"><img [src]="'http://localhost:3000/uploads/' + ab.imgURL" alt=""></div>
+          <div>
+            <h4>{{ab.jobTitle}}</h4>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Right Column -->
+      <div class="about-right">
+        <h5 class="section-title">ABOUT ME</h5>
+        <h2>{{ab.title}}</h2>
+        <p>
+         {{ab.description}}
+        </p>
+  
+        <div class="experience-grid">
+            <div class="exp-item" *ngFor="let ae of About.experience">
+              <img [src]="'http://localhost:3000/uploads/' + ae.companyImgURL" [attr.alt]="ae.companyName">
+              <div>
+                <h4>{{ ae.companyName }}</h4>
+                <p>
+                  {{ ae.companyJobTitle }}<br>
+                  <span>({{ ae.startDate }} – {{ ae.endDate }})</span>
+                </p>
+              </div>
+            </div>
+          </div>
+</div>
+</div>
+</section>          

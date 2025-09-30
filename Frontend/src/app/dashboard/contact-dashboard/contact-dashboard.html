@@ -1,0 +1,26 @@
+<div class="contacts-wrapper mt-5 w-100">
+    <div class="contacts-header">
+      <h2>Contacts</h2>
+    </div>
+    <div class="contacts-grid">
+      <div class="contact-card" *ngFor="let c of contactList">
+        <div class="card-top">
+          <div class="contact-meta">
+            <h3 class="contact-name">Name: {{ c.name }}</h3>
+            <p class="contact-email">Email: {{ c.email }}</p>
+            <p class="contact-phoneNumber">Phone Number: {{ c.phoneNumber }}</p>
+            <p class="contact-role">Subject: {{ c.subject }}</p>
+            <p class="contact-message">Message: {{ c.message }}</p>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-reply" (click)="replyContact(c)">Reply</button>
+          <button class="btn-delete" (click)="deleteContact(c._id)">Delete</button>
+        </div>
+      </div>
+    </div>
+    <div class="empty-state" *ngIf="contactList.length === 0">
+      <p>No contacts found.</p>
+    </div>
+  </div>
+  

@@ -1,0 +1,111 @@
+<section class="dashboard-section">
+  <!-- About Form -->
+  <div class="form-card form-card-about">
+    <h2 class="form-title">Add / Update About</h2>
+    <form [formGroup]="aboutFormGroup" (ngSubmit)="updateAboutData()">
+      <div class="form-group">
+        <label for="yearsOfExperience">Years of Experience</label>
+        <input id="yearsOfExperience" type="number" class="form-control" placeholder="Years of Experience"
+          formControlName="yearsOfExperience">
+      </div>
+      <div class="form-group">
+        <label for="jobTitle">Job Title</label>
+        <input id="jobTitle" type="text" class="form-control" placeholder="Job Title" formControlName="jobTitle">
+      </div>
+      <div class="form-group">
+        <label for="title">Section Title</label>
+        <input id="title" type="text" class="form-control" placeholder="Section Title" formControlName="title">
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" class="form-control" placeholder="Description"
+          formControlName="description"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="imgURL">Profile Image</label>
+        <input id="imgURL" type="file" class="form-control" (change)="onFileChange($event, 'jobTitleImage')">
+
+      </div>
+      <button type="submit" class="btn-primary" >Save About</button>
+    </form>
+  </div>
+
+
+
+ <!-- Experience Form -->
+<div class="form-card form-card-experience">
+  <h2 class="form-title">{{ isEdit ? "Update Experience" : "Add Experience" }}</h2>
+
+  <!-- form dynamic -->
+  <form [formGroup]="experienceFormGroup" (ngSubmit)="isEdit ? updateExperience() : addExperience()">
+
+    <div class="form-group">
+      <label for="companyName">Company Name</label>
+      <input id="companyName" type="text" class="form-control" placeholder="Company Name"
+             formControlName="companyName">
+    </div>
+
+    <div class="form-group">
+      <label for="companyJobTitle">Job Title</label>
+      <input id="companyJobTitle" type="text" class="form-control" placeholder="Job Title"
+             formControlName="companyJobTitle">
+    </div>
+
+    <div class="form-group">
+      <label for="companyURL">Company URL</label>
+      <input id="companyURL" type="text" class="form-control" placeholder="Company URL"
+             formControlName="companyURL">
+    </div>
+
+    <div class="form-group">
+      <label for="startDate">Start Date</label>
+      <input id="startDate" type="date" class="form-control" formControlName="startDate">
+    </div>
+
+    <div class="form-group">
+      <label for="endDate">End Date</label>
+      <input id="endDate" type="date" class="form-control" formControlName="endDate">
+    </div>
+
+    <div class="form-group">
+      <label for="companyImgURL">Company Logo</label>
+      <input id="companyImgURL" type="file" class="form-control" (change)="onFileChange($event, 'companyImgURL')">
+
+    </div>
+
+    <button type="submit" class="btn-primary">
+      {{ isEdit ? "Update Experience" : "Add Experience" }}
+    </button>
+  </form>
+</div>
+
+
+  <!-- Experience Cards -->
+
+<div class="experience-grid">
+  <div class="experience-card" *ngFor="let exp of experienceList">
+    <img [src]="'http://localhost:3000/uploads/' + exp.companyImgURL" 
+         alt="{{exp.companyName}}" 
+         class="card-img-top" />
+
+    <div class="card-body">
+      <h3>{{ exp.companyName }}</h3>
+      <p class="description">{{ exp.companyJobTitle }}</p>
+      <div class="card-dates">
+        <span>{{ exp.startDate }} - {{ exp.endDate }}</span>
+      </div>
+
+      <div class="card-links" *ngIf="exp.companyURL">
+        <a [href]="exp.companyURL" target="_blank" class="company-link">Visit Company</a>
+      </div>
+
+      <!-- Actions -->
+      <div class="card-actions">
+        <button class="btn-edit" (click)="editExperience(exp)">Edit</button>
+        <button class="btn-delete" (click)="deleteExperience(exp._id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>

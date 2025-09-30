@@ -1,0 +1,18 @@
+<div class="container text-center">
+  <p>MY SKILLS</p>
+
+  <div class="skills-slider">
+    @for (skill of skillsList; track $index) {
+      <div class="skill-card">
+        <div class="skill-header">
+          <img [src]="'http://localhost:3000/uploads/' + skill.imgURL" alt="{{skill.title}}">
+        </div>
+        <div class="skill-body">
+          {{skill.title}}
+        </div>
+      </div>
+    }
+  </div> 
+</div>
+
+

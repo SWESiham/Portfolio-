@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+
+    @for (proj of projectsList; track $index) {
+      <div class="col-12 col-lg-6 d-flex justify-content-center mb-4">
+        <div class="card project-card">
+          <img [src]="'http://localhost:3000/uploads/' + proj.imgURL" class="card-img-top" alt="{{proj.title}}">
+          <div class="card-body">
+            <h5 class="card-title">{{proj.title}}</h5>
+            <p class="card-text">{{proj.description}}</p>
+            <div class="card-lowersec">
+              <div class="cardLower1">
+                @for (lang of proj.language; track $index) {
+                  <span class="languages">{{lang}}</span>
+                }
+              </div>
+              <div class="cardLower2">
+                <a [href]="proj.githubUrl" class="github" target="_blank">
+                  <i class="fab fa-github"></i>
+              </a>
+              <a [href]="proj.demo" target="_blank" class="demo">
+                Demo
+              </a>
+              
+              </div>
+
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+
+  </div>
+</div>

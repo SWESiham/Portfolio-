@@ -1,0 +1,204 @@
+.projects-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+  }
+  .projects-header {
+    font-size: 2rem;
+    color: #57b8ff;
+    margin-bottom: 30px;
+  }
+  
+  /* Form Styling */
+  .project-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto 50px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .project-form input,
+  .project-form textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  .project-form button {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .project-form button:hover {
+    transform: scale(1.03);
+  }
+  
+  /* Projects Grid */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    justify-items: center;
+  }
+  
+  .project-card {
+    width: 100%;
+    max-width: 35rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #fff;
+    overflow: hidden;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.02);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 8px 20px;
+  }
+  
+  .card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    width: 100%;
+  }
+  
+  .card-body {
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .description {
+    margin: 10px 0 15px;
+    font-size: 14px;
+    opacity: 0.9;
+  }
+  
+  .languages,
+  .github,
+  .demo {
+    display: inline-block;
+    padding: 4px 10px;
+    margin: 4px 6px 0 0;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    white-space: nowrap;
+    transition: transform 0.2s ease;
+  }
+  
+  .languages:hover,
+  .github:hover,
+  .demo:hover {
+    transform: scale(1.01);
+  }
+  
+  .card-lowersec {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  /* Action Buttons */
+  .card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .card-actions .btn-edit,
+  .card-actions .btn-delete {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 80px;
+  }
+  
+  .card-actions .btn-edit {
+    background: #57b8ff;
+  }
+  
+  .card-actions .btn-edit:hover {
+    background: #4691d1;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(87, 184, 255, 0.4);
+  }
+  
+  .card-actions .btn-delete {
+    background: #ff4d4f;
+  }
+  
+  .card-actions .btn-delete:hover {
+    background: #d9363e;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 77, 79, 0.4);
+  }
+  select {
+    width: 100%;
+    padding: 10px 14px;
+    margin-top: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    appearance: none; /* remove default arrow */
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 10px;
+  }
+  
+  select:hover {
+    border-color: #6a11cb;
+    box-shadow: rgba(106, 17, 203, 0.3) 0px 4px 12px;
+  }
+  
+  select:focus {
+    border-color: #2575fc;
+    box-shadow: rgba(37, 117, 252, 0.4) 0px 4px 14px;
+  }
+  
+  option {
+    background: #222; 
+    color: #fff;
+    padding: 10px;
+    font-size: 14px;
+  }
+    

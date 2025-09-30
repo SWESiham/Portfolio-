@@ -1,0 +1,40 @@
+<!-- <p>contact works!</p> -->
+
+
+<form  class="mt-5" (ngSubmit)="send()" [formGroup]="formGroup">
+    <h1>Get Ready To Create Great</h1>
+
+    <ul class="listOfMyInfoContact">
+        <li>E-mail: <p>sehamsayed248@gmail.com</p> </li>
+        <li>Location: <p>Egypt, Cairo</p></li>
+        <li>Contact: <p>+20 1008451478</p> </li>
+    </ul>
+    <br>
+    <br>
+
+    <div class="row ">
+        <h1>GET IN TOUCH</h1>
+        <div class="col">
+            <div data-mdb-input-init class="form-outline">
+                <input type="text" id="form6Example1" class="form-control" formControlName="name" placeholder="Your Name"/>
+            </div>
+            <div data-mdb-input-init class="form-outline">
+                <input type="tel" id="form6Example1" class="form-control " formControlName="phoneNumber" placeholder="Phone Number" />
+            </div>
+            <div data-mdb-input-init class="form-outline">
+                <input type="email" id="form6Example5" class="form-control" formControlName="email" placeholder="Your Email"/>
+            </div>
+            <div data-mdb-input-init class="form-outline">
+                <input type="text" id="form6Example1" class="form-control" formControlName="subject" placeholder="Subject"/>
+            </div>
+        <div data-mdb-input-init class="form-outline ">
+            <textarea class="form-control" id="form6Example7" rows="4" formControlName="message" placeholder="Your Message"></textarea>
+        </div>
+
+    </div>
+
+    
+<!-- (click)="SendEmail();" -->
+</div>
+    <button data-mdb-ripple-init class="btn btn-primary btn-block mt-4" type="submit" >Appointment Now</button>
+</form>

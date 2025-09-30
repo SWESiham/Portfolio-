@@ -1,0 +1,107 @@
+
+
+<section class="dashboard-wrapper">
+    <!-- Stats Cards -->
+    <div class="stats-top">
+      <div class="stat-card">
+        <h4>Projects</h4>
+        <p class="stat-number">{{projectsList.length}}</p>
+        <p>Total projects</p>
+      </div>
+  
+      <div class="stat-card">
+        <h4>Skills</h4>
+        <div class="skills-list" *ngFor="let skill of skillsList">
+          <span>{{skill.title}}</span>
+        </div>
+      </div>
+  
+      <div class="stat-card">
+        <h4>Last projects</h4>
+        <div class="last-projects" *ngFor="let proj of projectsList  | slice:0:3">
+          <div>{{proj.title}} <span *ngFor="let lang of proj.language">{{lang}}  </span></div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Welcome -->
+    <div class="welcome-wrapper">
+      <h2>Welcome Back, Admin 👋</h2>
+      <p>Ready to take control? Let’s manage your projects, messages and skills today 🚀</p>
+  
+      <div class="overview-cards">
+        <div class="overview-card">
+          <div class="icon">📁</div>
+          <div class="number">{{projectsList.length}}</div>
+          <div class="label">Projects Created</div>
+        </div>
+  
+        <div class="overview-card">
+          <div class="icon">💡</div>
+          <div class="number">{{skillsList.length}}</div>
+          <div class="label">Skills</div>
+        </div>
+  
+        <div class="overview-card">
+          <div class="icon">✉️</div>
+          <div class="number">{{contactList.length}}</div>
+          <div class="label">Messages</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+<form [formGroup]='formGroup' (ngSubmit)="updateData()" class="mt-5">
+    <h1>Profile Setting</h1>
+    <br>
+    <br>
+    <div class="row ">
+        <div class="col">
+            <!-- name input -->
+            <div data-mdb-input-init class="form-outline">
+                <label class="form-label" for="form6Example1">Name</label>
+                <input type="text" id="form6Example1" class="form-control" formControlName="name"/>
+            </div>
+            <!-- title input -->
+            <div data-mdb-input-init class="form-outline">
+                <label class="form-label" for="form6Example1">Title</label>
+                <input type="text" id="form6Example1" class="form-control " formControlName="title" />
+            </div>
+        <!-- Message input -->
+        <div data-mdb-input-init class="form-outline ">
+            <label class="form-label" for="form6Example7">Description</label>
+            <textarea class="form-control" id="form6Example7" rows="4" formControlName="description"></textarea>
+        </div>
+
+        <div class="col">
+            <div data-mdb-input-init class="form-outline ">
+                <label class="form-label" for="form6Example2">Github</label>
+                <input type="text" id="form6Example2" class="form-control mb-4" formControlName="githubURL"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- Text input -->
+    <div data-mdb-input-init class="form-outline">
+        <label class="form-label" for="form6Example3">Linkedin</label>
+        <input type="text" id="form6Example3" class="form-control" formControlName="linkedin" />
+    </div>
+
+    <div data-mdb-input-init class="form-outline">
+        <label class="form-label" for="form6Example5">Email</label>
+        <input type="email" id="form6Example5" class="form-control" formControlName="email" />
+    </div>
+    <div data-mdb-input-init class="form-outline">
+        <label class="form-label">CV</label>
+        <input type="file" class="form-control" (change)="onChange($event)" />
+          <div *ngIf="savedCvName" class="mt-2">
+          <a [href]="'http://localhost:3000/'+savedCvName" target="_blank">{{savedCvName}}</a>
+        </div>
+      </div>
+      
+
+</div>
+    <!-- Submit button -->
+    <button data-mdb-ripple-init class="btn btn-primary btn-block mt-4">Save Changes</button>
+</form>

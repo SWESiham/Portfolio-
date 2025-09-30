@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Arial', sans-serif;
+    transition: background 0.6s ease, color 0.6s ease;
+  }
+
+  .dark-mode {
+    background: linear-gradient(
+    90deg,
+      /* #a411e7 0%,       */
+      #37353E 10%,      
+      #44444E 20%  ,
+      #715A5A 100%  ,
+      #D3DAD9 70%  
+    );
+    color: #e6d6f5;
+  }
+  
+  .light-mode {
+    background: linear-gradient(
+      90deg,
+      #715A5A 20%,    
+      #73737e 50%  ,  
+      #301946 100%
+    );
+    color: black;
+  }
+  
